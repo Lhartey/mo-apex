@@ -14,10 +14,15 @@ export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-        return scrollY.onChange((latest) => {
-            setIsScrolled(latest > 50);
-        });
-    }, [scrollY]);
+        const handleScroll = () => {
+            const scrolled = window.scrollY > 50;
+            if (scrolled !== isScrolled) {
+                setIsScrolled(scrolled);
+            }
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [isScrolled]);
 
     const menuItems = [
         { label: <Link href="/">Home</Link>, key: '/' },
@@ -31,8 +36,9 @@ export default function Header() {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className={`fixed left-0 right-0 z-50 transition-all duration-700 ease-in-out flex items-center justify-between ${isScrolled
-                ? 'top-0 w-full h-20 bg-white/80 backdrop-blur-xl shadow-lg border-b border-gray-100 px-6 md:px-12 rounded-none'
+            style={{ willChange: 'transform, top, width, border-radius' }}
+            className={`fixed left-0 right-0 z-50 transition-all duration-500 ease-in-out flex items-center justify-between ${isScrolled
+                ? 'top-0 w-full h-20 bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-100 px-6 md:px-12 rounded-none'
                 : 'top-6 mx-auto w-[92%] max-w-7xl h-20 liquid-glass rounded-full px-10 shadow-2xl'
                 }`}
         >
