@@ -15,8 +15,8 @@ export async function POST(req: Request) {
         }
 
         const { data, error } = await resend.emails.send({
-            from: 'Mo Apex Contact <onboarding@resend.dev>', // You will need to verify your domain in Resend to change this
-            to: ['moapexdesignandbuild@gmail.com'],
+            from: process.env.CONTACT_FORM_SENDER || 'Mo Apex Contact <onboarding@resend.dev>',
+            to: [process.env.CONTACT_FORM_RECEIVER || 'moapexdesignandbuild@gmail.com'],
             subject: `New Project Inquiry: ${subject}`,
             replyTo: email,
             html: `
