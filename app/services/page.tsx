@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from 'antd';
 import { services } from '@/app/data/services';
 
@@ -41,10 +42,13 @@ export default function ServicesPage() {
                         >
                             {/* Image Card */}
                             <div className="relative aspect-[4/3] overflow-hidden mb-8 bg-gray-100">
-                                <img
+                                <Image
                                     src={service.image}
                                     alt={service.title}
-                                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 filter grayscale-0 group-hover:grayscale-[20%]"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    quality={75}
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale-0 group-hover:grayscale-[20%]"
                                 />
                                 {/* Heavy Border Accent */}
                                 <div className="absolute inset-0 border-4 border-transparent group-hover:border-gold-500/0 transition-colors duration-500" />

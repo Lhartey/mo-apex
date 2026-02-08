@@ -42,10 +42,11 @@ export default function Clients() {
                         x: {
                             repeat: Infinity,
                             repeatType: "loop",
-                            duration: 40,
+                            duration: 45, // Slightly slower for smoother visual
                             ease: "linear",
                         },
                     }}
+                    style={{ willChange: "transform" }}
                     className="flex flex-nowrap gap-12 whitespace-nowrap py-4"
                 >
                     {duplicatedClients.map((client, index) => (
@@ -55,7 +56,9 @@ export default function Clients() {
                             style={{
                                 width: '260px',
                                 height: '130px',
-                                flexShrink: 0
+                                flexShrink: 0,
+                                transform: 'translateZ(0)', // Force GPU
+                                willChange: 'transform'
                             }}
                         >
                             {/* Subtle Background Structural Detail */}
@@ -66,6 +69,7 @@ export default function Clients() {
                                 alt={client.name}
                                 className="max-w-[180px] max-h-[80px] w-auto h-auto object-contain filter grayscale opacity-50 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-700 relative z-10 scale-90 group-hover/item:scale-110"
                                 loading="lazy"
+                                style={{ willChange: "transform, filter, opacity" }}
                             />
 
                             {/* Decorative Frame Accents */}

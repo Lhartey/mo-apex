@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useParams, notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from 'antd';
 import { ArrowLeftOutlined, ExpandOutlined } from '@ant-design/icons';
 import Lightbox from "yet-another-react-lightbox";
@@ -27,10 +28,17 @@ export default function ProjectDetail() {
         <div className="min-h-screen bg-white">
             {/* Header Image */}
             <div className="relative h-[50vh] md:h-[70vh] w-full overflow-hidden bg-gray-900">
-                <div
-                    className="absolute inset-0 bg-cover bg-center opacity-70"
-                    style={{ backgroundImage: `url('${project.images[0].replace(/'/g, "\\'")}')` }}
-                />
+                <div className="absolute inset-0">
+                    <Image
+                        src={project.images[0]}
+                        alt={project.title}
+                        fill
+                        priority
+                        quality={85}
+                        sizes="100vw"
+                        className="object-cover opacity-70"
+                    />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent opacity-90" />
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 max-w-7xl mx-auto">
@@ -85,10 +93,13 @@ export default function ProjectDetail() {
                                     setLightboxOpen(true);
                                 }}
                             >
-                                <img
+                                <Image
                                     src={img}
-                                    alt={`View ${idx + 1}`}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    alt={`${project.title} - View ${idx + 1}`}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    quality={75}
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                                     <ExpandOutlined className="text-white text-3xl opacity-0 group-hover:opacity-100 transform scale-75 group-hover:scale-100 transition-all" />

@@ -81,8 +81,11 @@ h6 {
   height: 100%;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.05;
+  opacity: 0.03;
+  /* Reduced for better performance */
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  transform: translateZ(0);
+  /* Cache as layer */
 }
 
 html {
@@ -103,6 +106,7 @@ html {
 .animate-ring {
   position: relative;
   overflow: hidden;
+  transform: translateZ(0);
 }
 
 .animate-ring::before {
@@ -115,6 +119,7 @@ html {
   background: conic-gradient(transparent, transparent, transparent, #C5A059);
   animation: ring-rotate 4s linear infinite;
   z-index: 0;
+  will-change: transform;
 }
 
 .animate-ring>* {
@@ -126,6 +131,7 @@ html {
   position: relative;
   padding: 2px;
   overflow: hidden;
+  transform: translateZ(0);
 }
 
 .gold-ring-container.active::before {
@@ -137,6 +143,7 @@ html {
   height: 200%;
   background: conic-gradient(from 0deg, transparent 0%, #C5A059 50%, transparent 100%);
   animation: ring-rotate 2s linear infinite;
+  will-change: transform;
 }
 
 .form-inner {
@@ -152,7 +159,8 @@ html {
   -webkit-backdrop-filter: blur(12px) saturate(160%) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25) !important;
-  transform: translateZ(0); /* Force GPU acceleration */
+  transform: translateZ(0);
+  /* Force GPU acceleration */
 }
 
 /* Nav Link Glow & Visibility */

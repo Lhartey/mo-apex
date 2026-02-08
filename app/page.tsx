@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from 'antd';
 import { useRef } from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
@@ -10,9 +11,9 @@ import Clients from '@/components/Clients';
 import ContactForm, { ContactFormHandle } from '@/components/ContactForm';
 
 export default function Home() {
-    const heroImage = '/images/hero/hero-main.jpg'; // pexels-declan-17586112.jpg
-    const ambient1 = '/images/ambient/ambient-1.jpg'; // pexels-adrien-olichon
-    const ambient2 = '/images/ambient/ambient-2.jpg'; // pexels-quan-tran
+    const heroImage = '/images/hero/hero-main.jpg';
+    const ambient1 = '/images/ambient/ambient-1.jpg';
+    const ambient2 = '/images/ambient/ambient-2.jpg';
 
     const contactRef = useRef<ContactFormHandle>(null);
 
@@ -39,9 +40,18 @@ export default function Home() {
                     initial={{ scale: 1.1, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: `url('${heroImage}')` }}
+                    className="absolute inset-0"
+                    style={{ willChange: "transform, opacity" }}
                 >
+                    <Image
+                        src={heroImage}
+                        alt="Mo Apex Design Hero"
+                        fill
+                        priority
+                        quality={85}
+                        sizes="100vw"
+                        className="object-cover"
+                    />
                     {/* Dark gradient overlay for readability */}
                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80 md:bg-gradient-to-r md:from-black/80 md:via-black/20 md:to-transparent" />
                 </motion.div>
@@ -204,15 +214,21 @@ export default function Home() {
                                 key={project.id}
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.2, duration: 0.8 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
                                 className="group cursor-pointer"
+                                style={{ willChange: "transform, opacity" }}
                             >
                                 <Link href={`/projects/${project.id}`}>
                                     <div className="relative aspect-[3/4] overflow-hidden bg-dark-900 mb-8 shadow-2xl transition-transform duration-700 group-hover:-translate-y-2">
-                                        <div
-                                            className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 filter grayscale group-hover:grayscale-0 contrast-125"
-                                            style={{ backgroundImage: `url('${project.images[0].replace(/'/g, "\\'")}')` }}
+                                        <Image
+                                            src={project.images[0]}
+                                            alt={project.title}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                                            quality={75}
+                                            className="object-cover transition-transform duration-1000 group-hover:scale-105 filter grayscale group-hover:grayscale-0 contrast-125"
+                                            style={{ willChange: "transform" }}
                                         />
                                         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500" />
 
