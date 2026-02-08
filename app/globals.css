@@ -1,26 +1,181 @@
 @import "tailwindcss";
 
+@theme {
+  --color-gold-500: #C5A059;
+  --color-gold-600: #A3823E;
+  --color-dark-950: #0a0a0a;
+  --color-dark-900: #121212;
+  --color-dark-800: #1E1E1E;
+  --color-gray-100: #F5F5F5;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground-rgb: 20, 20, 20;
+  --background-rgb: 255, 255, 255;
+  --font-display: var(--font-inter);
+  /* Using Inter for now, could switch if needed */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  overflow-x: hidden;
+  font-family: var(--font-inter), sans-serif;
+  letter-spacing: -0.01em;
+  /* Tighter tracking for a more solid feel */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-dark-900);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border: 2px solid #121212;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Texture Overlay */
+.grain-overlay::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.05;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animated Ring Effect */
+@keyframes ring-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-ring {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-ring::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, transparent, transparent, #C5A059);
+  animation: ring-rotate 4s linear infinite;
+  z-index: 0;
+}
+
+.animate-ring>* {
+  position: relative;
+  z-index: 1;
+}
+
+.gold-ring-container {
+  position: relative;
+  padding: 2px;
+  overflow: hidden;
+}
+
+.gold-ring-container.active::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent 0%, #C5A059 50%, transparent 100%);
+  animation: ring-rotate 2s linear infinite;
+}
+
+.form-inner {
+  position: relative;
+  background: white;
+  z-index: 1;
+}
+
+/* Liquid Glass Effect */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Nav Link Glow & Visibility */
+.nav-link-glow .ant-menu-item,
+.nav-link-glow .ant-menu-item a,
+.nav-link-glow .ant-menu-item .ant-menu-title-content {
+  transition: all 0.3s ease !important;
+  color: #121212 !important;
+  /* Black as requested */
+}
+
+.nav-link-glow .ant-menu-item:hover,
+.nav-link-glow .ant-menu-item:hover a,
+.nav-link-glow .ant-menu-item:hover .ant-menu-title-content {
+  text-shadow: 0 0 15px rgba(197, 160, 89, 0.6);
+  color: #C5A059 !important;
+}
+
+.nav-link-glow .ant-menu-item-selected,
+.nav-link-glow .ant-menu-item-selected a,
+.nav-link-glow .ant-menu-item-selected .ant-menu-title-content {
+  color: #C5A059 !important;
+}
+
+.nav-link-glow .ant-menu-item-active::after {
+  display: none !important;
 }
