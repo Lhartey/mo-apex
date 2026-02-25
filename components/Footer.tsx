@@ -18,6 +18,9 @@ export default function Footer() {
                             <a href="tel:+233205826884" className="hover:text-gold-500 transition-colors">+233 20 582 6884</a>
                         </li>
                         <li>
+                            <a href="tel:+233553488831" className="hover:text-gold-500 transition-colors">+233 55 348 8831</a>
+                        </li>
+                        <li>
                             <a href="mailto:moapexdesignandbuild@gmail.com" className="hover:text-gold-500 transition-colors">moapexdesignandbuild@gmail.com</a>
                         </li>
                     </ul>

@@ -42,8 +42,8 @@ export default function Header() {
                 : 'top-6 mx-auto w-[92%] max-w-7xl h-20 liquid-glass rounded-full px-10 shadow-2xl'
                 }`}
         >
-            <Link href="/" className="font-bold text-2xl tracking-tighter transition-all duration-300 hover:scale-105 text-dark-900">
-                MO-APEX <span className="text-gold-500">DESIGN</span>
+            <Link href="/" className="font-bold text-xl tracking-tighter transition-all duration-300 hover:scale-105 text-dark-900">
+                MO APEX <span className="text-gold-500">DESIGN AND DESIGN</span>
             </Link>
 
             {/* Desktop Menu */}

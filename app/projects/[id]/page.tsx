@@ -74,7 +74,7 @@ export default function ProjectDetail() {
                             </div>
                             <div>
                                 <div className="text-sm text-gray-400 uppercase tracking-widest mb-1">Location</div>
-                                <div className="font-medium text-dark-900">Liberia / West Africa</div>
+                                <div className="font-medium text-dark-900">Accra, Ghana / West Africa</div>
                             </div>
                         </div>
                     </div>

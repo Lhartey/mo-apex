@@ -21,7 +21,7 @@ export const projects: Project[] = [
   {
     "id": "the-signature-apartments-shiashie",
     "title": "The Signature Apartments - Shiashie",
-    "category": "Projects Contributed to",
+    "category": "Project Contributed to",
     "description": "We were also involved in the development of The Signature Apartments, setting a new benchmark for luxury living in Accra.",
     "images": [
       "/images/projects/projects-contributed-to/the-signature-apartments-shiashie/e57ffd_4e60e2a87430444e8f1d33a0b5d9c9fa~mv2.jpg",
@@ -32,7 +32,7 @@ export const projects: Project[] = [
   {
     "id": "new-bank-of-ghana-head-quarters-north-ridge",
     "title": "New Bank of Ghana Head Quarters - North Ridge",
-    "category": "Projects Contributed to",
+    "category": "Project Contributed to",
     "description": "Contributed to the construction of the Bank of Ghana’s new headquarters, a groundbreaking modern transformation and a symbol of economic stability.",
     "images": [
       "/images/projects/projects-contributed-to/new-bank-of-ghana-head-quarters-north-ridge/e57ffd_7524bdf273884b23bb2d1dafff46b3b8~mv2.jpg",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
   {
     "id": "ecg-bulk-supply-point-kasoa",
     "title": "ECG Bulk Supply Point - Kasoa",
-    "category": "Projects Contributed to",
+    "category": "Project Contributed to",
     "description": "Played a role in the construction of the ECG Bulk Supply Point, enhancing power distribution infrastructure in Kasoa.",
     "images": [
       "/images/projects/projects-contributed-to/ecg-bulk-supply-point-kasoa/e57ffd_16ba047e5de74e9cac5b5a581d3a9e95~mv2.jpg",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
   {
     "id": "tna-stadium-tarkwa",
     "title": "TNA Stadium - Tarkwa",
-    "category": "Projects Contributed to",
+    "category": "Project Contributed to",
     "description": "Helped bring to life the TNA Stadium in Tarkwa, a cutting-edge sports facility designed for the community.",
     "images": [
       "/images/projects/projects-contributed-to/tna-stadium-tarkwa/e57ffd_65e76941722249c6baa47856d8515854~mv2.png",
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     "id": "special-garden-homes-oyarifa",
     "title": "Special Garden Homes - Oyarifa",
-    "category": "Projects Contributed to",
+    "category": "Project Contributed to",
     "description": "Contributed to the development of Special Gardens Homes, offering premium living spaces in a peaceful environment.",
     "images": [
       "/images/projects/projects-contributed-to/special-garden-homes-oyarifa/e57ffd_100670ffbce0419f8bc511bc148fa985~mv2.png",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
   {
     "id": "royal-house-chapel-headquarters-oil-dome",
     "title": "Royal House Chapel Headquarters - Oil Dome",
-    "category": "Projects Contributed to",
+    "category": "Project Contributed to",
     "description": "Supported in the development of the Royal House Chapel’s Oil Dome, a landmark of faith and modern structural design.",
     "images": [
       "/images/projects/projects-contributed-to/royal-house-chapel-headquarters-oil-dome/e57ffd_0339993ac157425da6e7af30b23ece71~mv2.jpg",
