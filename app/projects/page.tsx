@@ -13,7 +13,7 @@ export default function ProjectsPage() {
     const categories = [
         { key: 'all', label: 'All Projects' },
         { key: 'Full Consultation & Design', label: 'Full Consultation & Design' },
-        { key: 'Projects Contributed to', label: 'Projects Contributed to' },
+        { key: 'Project Contributed to', label: 'Projects Contributed to' },
     ];
 
     const filteredProjects = activeCategory === 'all'

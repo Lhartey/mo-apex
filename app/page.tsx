@@ -78,7 +78,7 @@ export default function Home() {
                             }}
                             className="text-gold-500 font-bold uppercase tracking-[0.3em] mb-6 text-sm md:text-base"
                         >
-                            Architectural • Engineering • Construction
+                            Architecture • Engineering • Construction
                         </motion.h5>
                         <motion.h1
                             variants={{
@@ -87,6 +87,7 @@ export default function Home() {
                             }}
                             className="text-5xl md:text-9xl font-black tracking-tight mb-8 leading-[0.85]"
                         >
+                            <span className="sr-only">Mo Apex Design & Build - Architecture Engineering in Accra</span>
                             BUILDING <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gold-500">TOMORROW'S</span> <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">LEGACY.</span>
@@ -98,7 +99,7 @@ export default function Home() {
                             }}
                             className="text-lg md:text-xl text-gray-300 max-w-xl mb-12 leading-relaxed font-light border-l-2 border-gold-500 pl-6"
                         >
-                            Mo Apex is a solely design, engineering, building, and development organization committed to providing creative, long-lasting, and reliable solutions.
+                            MO APEX IS SOLELY A DESIGNING, ENGINEERING & CONSTRUCTION company committed to providing creative, long-lasting, and reliable solutions by turning dreams of our clients into reality with expert in craftsmanship and attention to details.
                         </motion.p>
                         <motion.div
                             variants={{

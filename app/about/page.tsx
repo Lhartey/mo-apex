@@ -33,7 +33,7 @@ export default function AboutPage() {
                         <h3 className="text-3xl font-bold mb-8 text-dark-900">Building Tomorrow's Legacy</h3>
                         <div className="text-lg text-gray-600 space-y-8 leading-relaxed">
                             <p>
-                                Mo Apex is a solely design, engineering, building, and development organization committed to providing creative, long-lasting, and reliable solutions spanning multiple fields and industries.
+                                MO APEX IS SOLELY A DESIGNING, ENGINEERING & CONSTRUCTION company committed to providing creative, long-lasting, and reliable solutions by turning dreams of our clients into reality with expert in craftsmanship and attention to details.
                             </p>
                             <p>
                                 Our team is made up of highly qualified experts from a variety of fields with years of experience working together. Our distinguishing characteristics are accountability, clarity, and client pleasure.
