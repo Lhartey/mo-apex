@@ -43,7 +43,7 @@ export default function Header() {
                 }`}
         >
             <Link href="/" className="font-bold text-xl tracking-tighter transition-all duration-300 hover:scale-105 text-dark-900">
-                MO APEX <span className="text-gold-500">DESIGN AND BUILD</span>
+                MO APEX <span className="text-gold-500">DESIGN & BUILD</span>
             </Link>
 
             {/* Desktop Menu */}
