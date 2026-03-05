@@ -56,82 +56,90 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80 md:bg-gradient-to-r md:from-black/80 md:via-black/20 md:to-transparent" />
                 </motion.div>
 
-                <div className="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 md:px-12 text-white">
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={{
-                            hidden: { opacity: 0 },
-                            visible: {
-                                opacity: 1,
-                                transition: {
-                                    staggerChildren: 0.2
-                                }
-                            }
-                        }}
-                        className="max-w-3xl"
-                    >
+                {/* Content Container */}
+                <div className="relative z-10 flex flex-col h-full max-w-7xl mx-auto px-6 md:px-12 text-white">
+                    {/* Top Section: Subtitle (right under navbar) */}
+                    <div className="pt-32 md:pt-40">
                         <motion.h5
-                            variants={{
-                                hidden: { opacity: 0, y: 20 },
-                                visible: { opacity: 1, y: 0 }
-                            }}
-                            className="text-gold-500 font-bold uppercase tracking-[0.3em] mb-6 text-sm md:text-base"
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="text-gold-500 font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm pl-1"
                         >
                             Architecture • Engineering • Construction
                         </motion.h5>
-                        <motion.h1
-                            variants={{
-                                hidden: { opacity: 0, y: 30 },
-                                visible: { opacity: 1, y: 0 }
-                            }}
-                            className="text-5xl md:text-9xl font-black tracking-tight mb-8 leading-[0.85]"
-                        >
-                            <span className="sr-only">Mo Apex Design & Build - Architecture Engineering in Accra</span>
-                            BUILDING <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gold-500">TOMORROW'S</span> <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">LEGACY.</span>
-                        </motion.h1>
-                        <motion.p
-                            variants={{
-                                hidden: { opacity: 0, y: 20 },
-                                visible: { opacity: 1, y: 0 }
-                            }}
-                            className="text-lg md:text-xl text-gray-300 max-w-xl mb-12 leading-relaxed font-light border-l-2 border-gold-500 pl-6"
-                        >
-                            MO APEX IS SOLELY A DESIGNING, ENGINEERING & CONSTRUCTION company committed to providing creative, long-lasting, and reliable solutions by turning dreams of our clients into reality with expert in craftsmanship and attention to details.
-                        </motion.p>
+                    </div>
+
+
+                    {/* Middle Section: Centered Main Heading */}
+                    <div className="flex-1 flex flex-col justify-center pb-20">
                         <motion.div
+                            initial="hidden"
+                            animate="visible"
                             variants={{
-                                hidden: { opacity: 0, y: 20 },
-                                visible: { opacity: 1, y: 0 }
+                                hidden: { opacity: 0 },
+                                visible: {
+                                    opacity: 1,
+                                    transition: {
+                                        staggerChildren: 0.2
+                                    }
+                                }
                             }}
-                            className="flex flex-wrap gap-4"
+                            className="max-w-3xl"
                         >
-                            <Link href="/projects">
-                                <Button type="primary" size="large" className="bg-white text-dark-900 border-none hover:bg-gold-500 hover:text-white h-16 px-12 text-base font-bold uppercase tracking-wider rounded-none transition-all duration-300 shadow-xl">
-                                    View Portfolio
-                                </Button>
-                            </Link>
-                            <Link href="/services">
-                                <Button size="large" ghost className="text-white border-white hover:text-gold-500 hover:border-gold-500 h-16 px-12 text-base font-bold uppercase tracking-wider rounded-none backdrop-blur-sm transition-all duration-300">
-                                    Our Services
-                                </Button>
-                            </Link>
+                            <motion.h1
+                                variants={{
+                                    hidden: { opacity: 0, y: 30 },
+                                    visible: { opacity: 1, y: 0 }
+                                }}
+                                className="text-5xl md:text-9xl font-black tracking-tight mb-8 leading-[0.85]"
+                            >
+                                <span className="sr-only">Mo Apex Design & Build - Architecture Engineering in Accra</span>
+                                BUILDING <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gold-500">TOMORROW'S</span> <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">LEGACY.</span>
+                            </motion.h1>
+                            <motion.p
+                                variants={{
+                                    hidden: { opacity: 0, y: 20 },
+                                    visible: { opacity: 1, y: 0 }
+                                }}
+                                className="text-lg md:text-xl text-gray-300 max-w-xl mb-12 leading-relaxed font-light border-l-2 border-gold-500 pl-6"
+                            >
+                                MO APEX IS SOLELY A DESIGNING, ENGINEERING & CONSTRUCTION company committed to providing creative, long-lasting, and reliable solutions by turning dreams of our clients into reality with expert in craftsmanship and attention to details.
+                            </motion.p>
+                            <motion.div
+                                variants={{
+                                    hidden: { opacity: 0, y: 20 },
+                                    visible: { opacity: 1, y: 0 }
+                                }}
+                                className="flex flex-wrap gap-4"
+                            >
+                                <Link href="/projects">
+                                    <Button type="primary" size="large" className="bg-white text-dark-900 border-none hover:bg-gold-500 hover:text-white h-16 px-12 text-base font-bold uppercase tracking-wider rounded-none transition-all duration-300 shadow-xl">
+                                        View Portfolio
+                                    </Button>
+                                </Link>
+                                <Link href="/services">
+                                    <Button size="large" ghost className="text-white border-white hover:text-gold-500 hover:border-gold-500 h-16 px-12 text-base font-bold uppercase tracking-wider rounded-none backdrop-blur-sm transition-all duration-300">
+                                        Our Services
+                                    </Button>
+                                </Link>
+                            </motion.div>
                         </motion.div>
+                    </div>
+
+                    {/* Scroll Indicator */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.5, y: [0, 15, 0] }}
+                        transition={{ delay: 2.5, duration: 2, repeat: Infinity }}
+                        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+                    >
+                        <span className="text-white/50 text-[10px] tracking-[0.4em] uppercase font-bold">Scroll</span>
+                        <div className="w-[1px] h-12 bg-gradient-to-b from-white/50 to-transparent" />
                     </motion.div>
                 </div>
-
-                {/* Scroll Indicator */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.5, y: [0, 15, 0] }}
-                    transition={{ delay: 2.5, duration: 2, repeat: Infinity }}
-                    className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-                >
-                    <span className="text-white/50 text-[10px] tracking-[0.4em] uppercase font-bold">Scroll</span>
-                    <div className="w-[1px] h-12 bg-gradient-to-b from-white/50 to-transparent" />
-                </motion.div>
             </section>
 
             {/* Introduction / Statement with Ambient Image */}
