@@ -59,7 +59,7 @@ export default function Home() {
                 {/* Content Container */}
                 <div className="relative z-10 flex flex-col h-full max-w-7xl mx-auto px-6 md:px-12 text-white">
                     {/* Top Section: Subtitle (right under navbar) */}
-                    <div className="pt-32 md:pt-40">
+                    <div className="pt-37 md:pt-44">
                         <motion.h5
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
