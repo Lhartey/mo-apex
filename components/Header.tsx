@@ -42,19 +42,19 @@ export default function Header() {
                 : 'top-6 mx-auto w-[92%] max-w-7xl h-20 liquid-glass rounded-full px-10 shadow-2xl'
                 }`}
         >
-            <Link href="/" className="font-bold text-xl tracking-tighter transition-all duration-300 hover:scale-105 text-dark-900">
-                    MO APEX <span className="text-gold-500">DESIGN & BUILD</span>
+            <Link href="/" className="font-bold text-lg md:text-xl tracking-tighter transition-all duration-300 hover:scale-105 text-dark-900 whitespace-nowrap shrink-0">
+                MO APEX <span className="text-gold-500">DESIGN & BUILD</span>
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden md:block">
+            <div className="hidden md:block flex-1 max-w-full ml-4 overflow-hidden">
                 <Menu
                     mode="horizontal"
                     items={menuItems}
                     selectedKeys={[pathname]}
-                    className="bg-transparent border-none min-w-[450px] justify-end font-bold text-xs tracking-[0.2em] uppercase transition-all duration-500 nav-link-glow"
-                    disabledOverflow
-                    style={{ background: 'transparent' }}
+                    className="bg-transparent border-none justify-end font-bold text-xs tracking-widest uppercase transition-all duration-500 nav-link-glow whitespace-nowrap"
+                    disabledOverflow={false} // Allow Ant Design to handle responsive hiding if it gets too small, but we also removed fixed width
+                    style={{ background: 'transparent', minWidth: 0, borderBottom: 'none' }}
                 />
             </div>
 

@@ -66,7 +66,7 @@ export default function Home() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="text-gold-500 font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm pl-1"
                         >
-                            Architecture • Engineering • Construction
+                            Architecture <span className="text-white text-[16px] md:text-[20px] font-black mx-1">•</span> Engineering <span className="text-white text-[16px] md:text-[20px] font-black mx-1">•</span> Construction
                         </motion.h5>
                     </div>
 
